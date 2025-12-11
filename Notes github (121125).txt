@@ -1,44 +1,45 @@
-==============================
-||| ==== FILE EXPLORER === |||
-==============================
-
+WINDOWS SYSTEM OPTIMIZATION & MANAGEMENT ===================================================================================================================
+HAK & IZIN SISTEM
+=================
 JADI FULL ADMINISTRATOR
-=======================
+-----------------------
 1.  Hanya bisa untuk Win 10/11 Pro
 2.  Cara cek dengan menekan Win + R, lalu ketik winver
 3.  Tekan Win + X, pilih "Computer Management"
 4.  Di System Tools > Local Users and Groups > Users
 5.  Double Click Administrator
 6.  Uncheck "Account is Disabled" dan Check "Password Never Expires"
-7.  Login dengan Account Administrator 
+7.  Login dengan Account Administrator
 8.  Cek Privilage dengan cara buka Cmd jalankan Biasa dan jalankan "Run as Administrator"
 9.  Jika berhasil akan seperti ini "C:\Users\Administrator>" baik itu jalan biasa/Run as Administrator
 10. Jika gagal akan seperti ini "C:\Users\Administrator>" di biasa dan "C:\Windows\System32>" di "Run as Administrator"
-11. Jalankan ini jika gagal bukan cmd (admin) masukan 
-    reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v EnableLUA /t REG_DWORD /d 0 /f
+11. Jalankan ini jika gagal bukan cmd (admin) masukan
+    reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v EnableLUA /t REG_DWORD /d 0 /f
 12. Dan restart laptop, lalu coba lagi seperti
 
+MANAJEMEN APLIKASI & SHORTCUT
+=============================
 UNTUK MENCARI FILE APLIKASI / SOFTWARE YANG TERINSTALL
-======================================================
+------------------------------------------------------
 1. Di kolom Windows, cari Run
 2. Ketik: shell:appsfolder
 
 MENGATASI ICON APLIKASI YANG HILANG
-===================================
+-----------------------------------
 1. Masuk ke CMD dan jalankan sebagai Administrator
 2. Ketik: taskkill /IM explorer.exe /F
 3. Ketik: DEL /A:H /F /Q %userprofile%\AppData\Local\IconCache.db
 4. Ketik: start explorer.exe
 
 MEMBUAT FOLDER YANG TIDAK BISA DI-PIN KE TASKBAR MENJADI BISA
-=============================================================
+-------------------------------------------------------------
 1. Klik kanan pada Desktop, pilih Shortcut
 2. Ketik: explorer "C:\Program Files (x86)"
-   (ubah path folder sesuai kebutuhan)
+   (ubah path folder sesuai kebutuhan)
 3. Klik kanan shortcut yang dibuat, pilih Pin to Taskbar
 
 CARA MENGEMBALIKAN OPSI WINRAR KE MENU KLIK KANAN
-=================================================
+-------------------------------------------------
 1. Buka WinRAR di komputer Anda
 2. Klik menu Options, pilih Settings
 3. Buka tab Integration
@@ -46,43 +47,69 @@ CARA MENGEMBALIKAN OPSI WINRAR KE MENU KLIK KANAN
 5. Klik OK dan tutup File Explorer
 
 MENAMBAHKAN SHORTCUT KE START MENU
-==================================
+----------------------------------
 1. Tekan Win + R, ketik:
-   %ProgramData%\Microsoft\Windows\Start Menu\Programs
+   %ProgramData%\Microsoft\Windows\Start Menu\Programs
 2. Buka folder software, klik kanan file .exe (misal vlc.exe), pilih Create shortcut
 3. Pindahkan shortcut ke folder Start Menu yang tadi dibuka
 
+MEMPERBAIKI SHORTCUT START MENU
+-------------------------------
+1. Buka CCleaner
+2. Di Custom Clean, pilih Start Menu Shortcuts
+3. Klik Run Cleaner
+4. Restart Windows Explorer (klik kanan Windows Explorer → Restart)
+
 MEMBUAT APLKASI JALAN SAAT STARTUP
-==================================
+----------------------------------
 1. Tekan Win + R, ketik shell:startup, tekan Enter. lalu letakan shortcut aplikasinya
 2. Klik kanan aplikasi → Create shortcut → pindahin shortcut ke folder Startup
 3. Klik kanan pada shortcut lalu Run nya ubah ke minimized (Optional)
 
+CARA INSTALL APLIKASI TANPA MICROSOFT STORE
+-------------------------------------------
+1. Buka Website Installer aplikasi yang ingin di install contoh
+   https://apps.microsoft.com/detail/9nksqgp7f2nh?hl=en-us&gl=us
+   Copy link Website Installer itu
+2. Lalu buka Link
+   https://store.rg-adguard.net/
+   Dan paste link website yang dicopy tadi, dan download dengan ekstensi .msixbundle / .msix
+3. Buka Powershell as Administrator, dan ketikan
+   Add-AppxPackage -Path
+   dan di sebelah -Path tambahkan lokasi file tadi yang sudah di download contoh
+   Add-AppxPackage -Path "E:\Download\5319275A.WhatsAppDesktop_2.2545.5.0_neutral_~_cv1g1gvanyjgm.Msixbundle"
+   Jika sudah benar tekan enter dan DONE.
+
+POWER & PERFORMANCE (LAPTOP/DESKTOP)
+====================================
 MEMBUAT POWER PLAN BERGANTI (LAPTOP ONLY)
-=========================================
+-----------------------------------------
 1. Ekstrak file Auto Power Plan
 2. Kemudia Pindahkah "AutoPowerPlanLauncher" ke startup contoh : "C:\Users\Administrator\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
 3. Kemudian folder "Scripts" dipindahkan ke C: contoh : "C:\Scripts"
 4. Lalu buka cmd dan ketik powercfg list, maka akan muncul "Power Schemes", Contoh :
-   C:\Users\Administrator>powercfg list
-   Existing Power Schemes (* Active)
-   -----------------------------------
-   Power Scheme GUID: 51319bd5-6686-43ff-8a18-f779245f2506  (Power saver)
-   Power Scheme GUID: c88d76f7-2f84-4365-be44-da042e3e7448  (Ultimate Performance) *
-5. copy bagian GUID (angka) yang ada di "Existing Power Schemes" lalu edit file "AutoPowerPlan.ps1" dan timpa bagian GUID (angka) yang ada di File 
-   $powerSaver = "GUID"
-   $ultimate = "GUID"
+   C:\Users\Administrator>powercfg list
+   Existing Power Schemes (* Active)
+   -----------------------------------
+   Power Scheme GUID: 51319bd5-6686-43ff-8a18-f779245f2506  (Power saver)
+   Power Scheme GUID: c88d76f7-2f84-4365-be44-da042e3e7448  (Ultimate Performance) *
+5. copy bagian GUID (angka) yang ada di "Existing Power Schemes" lalu edit file "AutoPowerPlan.ps1" dan timpa bagian GUID (angka) yang ada di File
+   $powerSaver = "GUID"
+   $ultimate = "GUID"
 6. Save dan coba restart
 
-MENGHENTIKAN PROGRAM YANG TIDAK TERDETEKSI DI TASK MANAGER
-==========================================================
-1. Buka Task Manager (Ctrl + Shift + Esc)
-2. Cari Windows Explorer dalam daftar proses
-3. Klik kanan, pilih Restart
-4. Coba hapus/pindahkan/edit file lagi
+MENAMBAHKAN ULTIMATE PERFORMANCE DI CONTROL PANEL
+-------------------------------------------------
+1. Buka Terminal / PowerShell
+2. Ketik untuk menambahkan :
+   powercfg -duplicatescheme a1841308-3541-4fab-bc81-f71556f20b4a
+   powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
+3. Ketik powercfg list untuk menghapus (Pindahkan dulu Power Option ke Ultimate Performance / Power Saver sebelum menghapus :
+   powercfg -delete 381b4222-f694-41f0-9685-ff5bb260df2e
+4. Buka Control Panel → Hardware and Sound → Power Options, pilih Ultimate Performance / Power Saver
 
 PERBAIKAN PEMELIHARAAN SISTEM DAN OPTIMASI PERFORMA
-===================================================
+---------------------------------------------------
 1. Buka Command Prompt sebagai Administrator, ketik urut berikut:
 2. DISM /Online /Cleanup-Image /RestoreHealth
 3. sfc /scannow
@@ -90,110 +117,92 @@ PERBAIKAN PEMELIHARAAN SISTEM DAN OPTIMASI PERFORMA
 5. cleanmgr
 6. cleanmgr /verylowdisk
 
+MANAJEMEN PROGRAM & PROSES
+==========================
+MENGHENTIKAN PROGRAM YANG TIDAK TERDETEKSI DI TASK MANAGER
+----------------------------------------------------------
+1. Buka Task Manager (Ctrl + Shift + Esc)
+2. Cari Windows Explorer dalam daftar proses
+3. Klik kanan, pilih Restart
+4. Coba hapus/pindahkan/edit file lagi
+
+JARINGAN
+========
 RESET TCP-IP (CMD)
-==================
+------------------
 1. Copy semua sekaligus
-netsh winsock reset
-netsh int ip reset
-ipconfig /flushdns
+   netsh winsock reset
+   netsh int ip reset
+   ipconfig /flushdns
 
-MENAMBAHKAN ULTIMATE PERFORMANCE DI CONTROL PANEL
-=================================================
-1. Buka Terminal / PowerShell
-2. Ketik untuk menambahkan :
-   powercfg -duplicatescheme a1841308-3541-4fab-bc81-f71556f20b4a
-   powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
-3. Ketik powercfg list untuk menghapus (Pindahkan dulu Power Option ke Ultimate Performance / Power Saver sebelum menghapus : 
-   powercfg -delete 381b4222-f694-41f0-9685-ff5bb260df2e   
-4. Buka Control Panel → Hardware and Sound → Power Options, pilih Ultimate Performance / Power Saver
-
-MEMPERBAIKI SHORTCUT START MENU
-===============================
-1. Buka CCleaner
-2. Di Custom Clean, pilih Start Menu Shortcuts
-3. Klik Run Cleaner
-4. Restart Windows Explorer (klik kanan Windows Explorer → Restart)
-
-CARA INSTALL APLIKASI TANPA MICROSOFT STORE
-===========================================
-1. Buka Website Installer aplikasi yang ingin di install contoh
-   https://apps.microsoft.com/detail/9nksqgp7f2nh?hl=en-us&gl=us
-   Copy link Website Installer itu
-2. Lalu buka Link 
-   https://store.rg-adguard.net/
-   Dan paste link website yang dicopy tadi, dan download dengan ekstensi .msixbundle / .msix
-3. Buka Powershell as Administrator, dan ketikan
-   Add-AppxPackage -Path 
-   dan di sebelah -Path tambahkan lokasi file tadi yang sudah di download contoh
-   Add-AppxPackage -Path "E:\Download\5319275A.WhatsAppDesktop_2.2545.5.0_neutral_~_cv1g1gvanyjgm.Msixbundle"
-   Jika sudah benar tekan enter dan DONE.
-
+PENGHAPUSAN / PEMBERSIHAN SISTEM
+================================
 HAPUS BLOATWARE
-===============
+---------------
 1. Download Revo Uninstaller
 2. Hapus Windows Apps, uncheck "Make a system restore point before uninstall"
 3. Hapus semua registry dan sisa file
 4. Jalankan dengan cara masuk ke power shell
 5. Lalu masuk ke lokasi file RemoveBuiltInApps.ps1 dengan cara :
-   cd C:\Users\Administrator\Downloads
+   cd C:\Users\Administrator\Downloads
 6. Jika sudah baru copy :
-   Set-ExecutionPolicy Bypass -Scope Process -Force; .\RemoveBuiltInApps.ps1
+   Set-ExecutionPolicy Bypass -Scope Process -Force; .\RemoveBuiltInApps.ps1
 
 MATIKAN/HAPUS DEFFENDER
-======================= 
+-----------------------
 1. Jalankan Aplikasi DefenderRemover
 2. Delete sisa file Deffender dengan Revo Uninstaller Pro
 3. Klik kanan folder sisa Deffender dan pilih
-   "Uninstall With Revo Uninstaller Pro"
+   "Uninstall With Revo Uninstaller Pro"
 4. Skip semua opsi Backup
 5. Restart
 
 MATIKAN AUTOUPDATE (CMD)
-========================
+------------------------
 1. Copy teks dibawah ini langsung semuanya dan paste di CMD Administrator
-sc stop wuauserv
-sc config wuauserv start= disabled
-sc config UsoSvc start= disabled
-sc config BITS start= disabled
-net stop cryptsvc
-net stop wuauserv
-icacls C:\Windows\SoftwareDistribution /deny SYSTEM:(W)
-icacls C:\Windows\SoftwareDistribution /deny "NT SERVICE\TrustedInstaller":(W)
-2. Download WUB, dan centang 
-   "Disabled Updates"
-   "Protect Services Settings"
-3. Klik Apply 
+   sc stop wuauserv
+   sc config wuauserv start= disabled
+   sc config UsoSvc start= disabled
+   sc config BITS start= disabled
+   net stop cryptsvc
+   net stop wuauserv
+   icacls C:\Windows\SoftwareDistribution /deny SYSTEM:(W)
+   icacls C:\Windows\SoftwareDistribution /deny "NT SERVICE\TrustedInstaller":(W)
+2. Download WUB, dan centang
+   "Disabled Updates"
+   "Protect Services Settings"
+3. Klik Apply
 
 HAPUS FILE RECOVERY / BACKUP WINDOWS LAMA (KHUSUS UPGRADE WINDOWS)
-==================================================================
+------------------------------------------------------------------
 1. Buka Disk Cleanup → pilih drive C:
 2. Klik "Clean up system files"
 3. Centang "Previous Windows installations" dan "System Restore and Shadow Copies"
 
 MATIKAN HIBERNATION
-===================
+-------------------
 1. Buka Command Prompt sebagai Administrator
 2. Ketik: powercfg -h off
 
 BERSIHKAN SYSTEM RESTORE / SHADOW COPY
-======================================
+--------------------------------------
 1. System Protection → Configure → Turn off system protection
 
 MATIKAN RESERVED STORAGE
-========================
+------------------------
 1. Buka PowerShell sebagai Administrator
 2. Ketik:
-   DISM /Online /Set-ReservedStorageState /State:Disabled
+   DISM /Online /Set-ReservedStorageState /State:Disabled
 3. Restart komputer
 
 HAPUS FILE UPDATE LAMA
-======================
+----------------------
 1. Buka folder:
-   C:\Windows\SoftwareDistribution\Download
+   C:\Windows\SoftwareDistribution\Download
 2. Hapus semua isi folder (jangan hapus foldernya sendiri)
 
 CLEAN TEMP
-==========
+----------
 1. Tekan Win + R, ketik : temp                                 > Hapus semua isi folder
 2. Tekan Win + R, ketik : %temp%                               > Hapus semua isi folder
 3. Tekan Win + R, ketik : %SystemRoot%\Prefetch                > Hapus semua isi folder
@@ -205,70 +214,39 @@ CLEAN TEMP
 9. Tekan Win + R, ketik : C:\Windows\Installer\*.tmp           > Hapus semua isi folder
 
 NONAKTIFKAN DELIVERY OPTIMIZATION CACHE
-=======================================
+---------------------------------------
 1. Settings → System → Storage → Temporary Files
 2. Centang Delivery Optimization Files → Delete
 
 HAPUS DRIVER LAMA
-=================
+-----------------
 1. Buka Command Prompt sebagai Administrator
 2. Ketik:
-   cleanmgr /sageset:1
+   cleanmgr /sageset:1
 3. Centang semua opsi, klik OK
 4. Ketik:
-   cleanmgr /sagerun:1
+   cleanmgr /sagerun:1
 
 MATIKAN SERVICE
-===============
+---------------
 1. Masuk ke Services.msc
 2. Matikan :
-   Windows Search
-   Diagnostic Policy Service
-   Diagnostic Execution Service
-   Diagnostic Service Host
-   Diagnostic System Host
-   Connected User Experiences and Telemetry
-   Windows Push Notifications System Service
+   Windows Search
+   Diagnostic Policy Service
+   Diagnostic Execution Service
+   Diagnostic Service Host
+   Diagnostic System Host
+   Connected User Experiences and Telemetry
+   Windows Push Notifications System Service
 3. Restart Pc
 
-===============================
-||| === TENTANG NGODING === |||
-===============================
-
-MEMBERIKAN SINTAKS SECARA CEPAT
-===============================
-1. Tekan CTRL + H bersamaan (Find & Replace)
-2. Di kolom pencarian, ketik:
-   ^(.*)$
-   (atau untuk awalan tertentu, misal huruf 'a':
-   ^(a.*)$
-   — 'a' bisa diganti sesuai awalan yang diinginkan)
-3. Di kolom Replace, masukkan sintaks pengganti, misal:
-   <p>$1</p>
-   (contoh ini membungkus teks dalam tag <p>, bisa diganti sesuai kebutuhan)
-
-MELIHAT HISTORY FILE DI VSCODE
-==============================
-1. Di kolom Windows, cari Run
-2. Ketik dan jalankan:
-   %AppData%\Code\User\History
-
-MEMATIKAN AUTO UPDATE VSCODE
-============================
-1. Buka VSCode.
-2. Tekan Ctrl + , buat buka Settings.
-3. Cari update.mode.
-4. Ubah ke: "update : mode "none"
-5. lalu uncheak : "update : enable windows background update"
 
 
-=============================
-||| === TEKS CAMPURAN === |||
-=============================
-
-SETTINGAN OBS
-=============
-Recording Setting
+CONFIG APLIKASI ============================================================================================================================================
+OBS
+===
+RECORDING SETTING
+-----------------
 Masuk ke settingan pilih output kemudian recording lalu, ubah ke output mode ke Advanced dan Type Standard
 Recording Format  = Matroska Video (.mkv)
 Video Encoder     = AMD HW H.264 (AVC)
@@ -280,51 +258,109 @@ Preset            = Quality
 Profile           = High
 Max B-frames      = 5
 
-Video Setting
-Masuk ke settingan pilih Video kemudian ubah Common FPS Value ke Integer FPS Value 
+VIDEO SETTING
+-------------
+Masuk ke settingan pilih Video kemudian ubah Common FPS Value ke Integer FPS Value
 Base (Canvas) resolution = 1920X1080
-Integer FPS Value = 60 Fps            
+Integer FPS Value = 60 Fps
 
+VLC
+===
 CARA AGAR VLC TIDAK MEMBUKA TAB/JENDELA BARU SAAT TAMBAH LAGU
-=============================================================
+-------------------------------------------------------------
 1. Buka VLC Media Player
 2. Klik Tools > Preferences atau tekan Ctrl + P
 3. Di pojok kiri bawah, pilih:
-   Show settings: All
+   Show settings: All
 4. Arahkan ke:
-   Playlist
+   Playlist
 5. Centang opsi ini:
-   Allow only one instance
-   Enqueue items into playlist in one instance mode
-   Klik Save 
-   Tutup dan buka lagi VLC (restart VLC)
+   Allow only one instance
+   Enqueue items into playlist in one instance mode
+   Klik Save
+   Tutup dan buka lagi VLC (restart VLC)
 
-INTERNET CEPAT DAN LEBIH PRIVASI
-================================
-1. Control Panel → Network Connections → Properties → IPv4/IPv6.
-2. Set DNS Windows (IPv4 & IPv6)
-3. IPv4
-   1.1.1.1
-   1.0.0.1
-4. IPv6
-   2606:4700:4700::1111
-   2606:4700:4700::1001
-5. Matikan Secure DNS, Preload, Prefetch di Edge copy ini di bar 
-   edge://settings/privacy
-6. Matikan ini
-   Use secure DNS = OFF
-   Preload pages → OFF
-   Preload new tab → OFF
-   Web service for navigation errors → OFF
-   Startup Boost → OFF
-   Continue running background apps → OFF
-7. Flush DNS Windows (CMD)
-   ipconfig /flushdns
-8. Test dengan cara di website ini : 
-   https://browserleaks.com/dns
-9. Hasil DNS Leak Test yang Benar
-   ISP     : Cloudflare
-   Location: Singapore/Jakarta
-   Server  : beberapa IP Cloudflare 3–60 = normal
-   Contoh  : 103.22.200.142  Cloudflare  Singapore
-   	         162.158.161.222 Cloudflare  Singapore
+ADRENALIN SETTING
+=================
+GPU TUNING CONFIG LOW
+---------------------
+Clock  : Min = 2700 MHz
+         Max = 2800 MHz
+Volt   : 1.015 V
+VRAM   : Memory Timing   = Default
+         Max Frequency   = 1840 MHz
+Power  : +10% / 110W
+Fan    : Zero RPM        = Disable
+         25°C            = 30%
+         30°C            = 30%
+         35°C            = 30%
+         40°C            = 30%
+         55°C            = 100%
+
+GPU TUNING CONFIG STOCK
+-----------------------
+Clock  : Min = 700  MHz
+         Max = 2750 MHz
+Volt   : 1.150 V
+VRAM   : Memory Timing   = Default
+         Max Frequency   = 1750 MHz
+Power  : +0% / 100W
+Fan    : Zero RPM        = Enabled
+         30°C            = 20%
+         50°C            = 28%
+         61°C            = 36%
+         72°C            = 44%
+         80°C            = 60%
+
+GAMING GRAPHICS
+---------------
++ Radeon Super Resolution     = Disabled
++ Amd Fluid Motion Frame      = Enabled
+  Search Mode   	      = high
+  Performance   	      = Quality
++ Radeon Anti-Lag	      = Enabled
++ Radeon Boost		      = Disabled
++ Radepon Chill	     	      = Disabled
++ Radeon Image Sharpening     = Disabled
+  Sharpness		      = 0%
++ Radeon Enchanced Sync       = Disabled
+  Wait For Vertical Refresh   = Off, Unless Applicaton Specifies
++ Frame Rate Target Control   = Disabled
++ Anti Aliasing	     	      = Use Application Settings
+  Anti Aliasing Method	      = Supersampling
+  Morphological Anti Aliasing = Enabled
++ Anisotropic Filtering	      = Enabled
+  Anisotropic Filtering Level = 16X
++ Texture Filtering Quality   = High
+  Surface Format Optimization = Disabled
++ Tessellation Mode	      = Use Applcation Setting
++ OpenGL Triple Buffering     = Disabled
++ 10 Bit Pixel Format	      = Disabled
+
+VSCODE
+======
+MEMBERIKAN SINTAKS SECARA CEPAT
+-------------------------------
+1. Tekan CTRL + H bersamaan (Find & Replace)
+2. Di kolom pencarian, ketik:
+   ^(.*)$
+   (atau untuk awalan tertentu, misal huruf 'a':
+   ^(a.*)$
+   — 'a' bisa diganti sesuai awalan yang diinginkan)
+3. Di kolom Replace, masukkan sintaks pengganti, misal:
+   <p>$1</p>
+   (contoh ini membungkus teks dalam tag <p>, bisa diganti sesuai kebutuhan)
+
+MELIHAT HISTORY FILE DI VSCODE
+------------------------------
+1. Di kolom Windows, cari Run
+2. Ketik dan jalankan:
+   %AppData%\Code\User\History
+
+MEMATIKAN AUTO UPDATE VSCODE
+----------------------------
+1. Buka VSCode.
+2. Tekan Ctrl + , buat buka Settings.
+3. Cari update.mode.
+4. Ubah ke: "update : mode "none"
+5. lalu uncheak : "update : enable windows background update"
