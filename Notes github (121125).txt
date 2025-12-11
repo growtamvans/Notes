@@ -299,3 +299,32 @@ CARA AGAR VLC TIDAK MEMBUKA TAB/JENDELA BARU SAAT TAMBAH LAGU
    Klik Save 
    Tutup dan buka lagi VLC (restart VLC)
 
+INTERNET CEPAT DAN LEBIH PRIVASI
+================================
+1. Control Panel → Network Connections → Properties → IPv4/IPv6.
+2. Set DNS Windows (IPv4 & IPv6)
+3. IPv4
+   1.1.1.1
+   1.0.0.1
+4. IPv6
+   2606:4700:4700::1111
+   2606:4700:4700::1001
+5. Matikan Secure DNS, Preload, Prefetch di Edge copy ini di bar 
+   edge://settings/privacy
+6. Matikan ini
+   Use secure DNS = OFF
+   Preload pages → OFF
+   Preload new tab → OFF
+   Web service for navigation errors → OFF
+   Startup Boost → OFF
+   Continue running background apps → OFF
+7. Flush DNS Windows (CMD)
+   ipconfig /flushdns
+8. Test dengan cara di website ini : 
+   https://browserleaks.com/dns
+9. Hasil DNS Leak Test yang Benar
+   ISP     : Cloudflare
+   Location: Singapore/Jakarta
+   Server  : beberapa IP Cloudflare 3–60 = normal
+   Contoh  : 103.22.200.142  Cloudflare  Singapore
+   	     162.158.161.222 Cloudflare  Singapore
