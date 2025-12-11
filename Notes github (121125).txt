@@ -327,4 +327,4 @@ INTERNET CEPAT DAN LEBIH PRIVASI
    Location: Singapore/Jakarta
    Server  : beberapa IP Cloudflare 3–60 = normal
    Contoh  : 103.22.200.142  Cloudflare  Singapore
-   	     162.158.161.222 Cloudflare  Singapore
+   	         162.158.161.222 Cloudflare  Singapore
