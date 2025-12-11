@@ -283,41 +283,7 @@ Max B-frames      = 5
 Video Setting
 Masuk ke settingan pilih Video kemudian ubah Common FPS Value ke Integer FPS Value 
 Base (Canvas) resolution = 1920X1080
-Integer FPS Value = 60 Fps
-            
-BIODATA DIRI DAN DATA YANG LAIN
-===============================
-NAMA           : Muhammad Luthfi Eka Saputra
-GMAIL          : luthfiekasaputra13@gmail.com
-NOMOR HP       : 08987096030
-NPSN           : 69786987
-NISN           : 0059545139
-NIK            : 3174041308050010
-NIK KK         : 3174091403170005
-ALAMAT KK      : JL. R. MOCH KAHFI II N0. 51 = RT/RW 006/003
-NIM            : 250201020
-LAHIR          : Pontianak, Kalimantan Barat. 13 Agustus 2005
-KELAMIN        : Laki-laki
-AGAMA          : Islam
-JALAN          : Kavling Dki No. 51
-PROVINSI       : D.K.I. Jakarta
-KELURAHAN      : Cipedak
-KABUPATEN/KOTA : Jakarta Selatan
-KECAMATAN      : Jagakarsa
-RW/RT          : 3/6
-KODE POS       : 12630
-ASAL SEKOLAH   : SMK 3 PERGURUAN CIKINI
-JURUSAN        : Teknik Jaringan Komputer dan Telekomunikasi
-NO DAFTAR KIP  : 1125.697.86987.1729.244
-KODE KIP       : 3563ab
-PW SNPMB       : upimauMakanmi3
-NO DAFTAR PNC  : 253240170975
-PROGRAM STUDI  : Diploma III - Teknik Elektronika
-NO ATM MANDIRI : 6032 9875 1531 0107
-ATM AKTIF      : 07/30
-KJMU NAMA ACC  : Luthfi130805
-KJMU PW   ACC  : Pontianak130805#
-REK DKI        : 433.23.06387.6
+Integer FPS Value = 60 Fps            
 
 CARA AGAR VLC TIDAK MEMBUKA TAB/JENDELA BARU SAAT TAMBAH LAGU
 =============================================================
@@ -331,4 +297,5 @@ CARA AGAR VLC TIDAK MEMBUKA TAB/JENDELA BARU SAAT TAMBAH LAGU
    Allow only one instance
    Enqueue items into playlist in one instance mode
    Klik Save 
+
    Tutup dan buka lagi VLC (restart VLC)
