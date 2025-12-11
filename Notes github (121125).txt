@@ -297,5 +297,5 @@ CARA AGAR VLC TIDAK MEMBUKA TAB/JENDELA BARU SAAT TAMBAH LAGU
    Allow only one instance
    Enqueue items into playlist in one instance mode
    Klik Save 
-
    Tutup dan buka lagi VLC (restart VLC)
+
